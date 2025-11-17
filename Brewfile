@@ -6,6 +6,7 @@ brew "bat" # a cat(1) clone with syntax highlighting and Git integration
 brew "nvim"
 brew "gnu-sed" # Used by nvim plugins
 brew "python3"
+brew "pyenv"
 brew "tmux"
 
 cask "iterm2"
@@ -24,8 +25,14 @@ brew "tree" # show file tree
 brew "watch" # watch a command, polling every n seconds
 brew "shellcheck"
 
-# Has tools like sha256sum, others
+# coreutils has tools like sha256sum, others
 brew "coreutils"
+brew "telnet"
+brew "netcat"
+brew "mtr"
+brew "wget"
+brew "curl"
+
 #useful json processor
 brew "jq"
 # useful yaml processor wrapper on jq
@@ -38,8 +45,7 @@ brew "tldr"
 brew "certbot" # Generate certs with lets encrypt
 brew "nmap"
 brew "asdf"
-brew "terraform"
-
+brew "tfenv" # version manager for terraform
 
 # Git Project management
 brew 'just'
@@ -60,6 +66,8 @@ brew "doctl"
 
 # k8s
 brew "minikube"
+brew "kubectl"
+brew "kubectx"
 brew "kustomize"
 brew "helm"
 
@@ -69,7 +77,7 @@ brew "s3cmd"
 brew "libpq" # Postgres tools library
 
 # GCP
-cask "gcloud"
+cask "gcloud-cli"
 
 # AWS
 brew "awscli"
