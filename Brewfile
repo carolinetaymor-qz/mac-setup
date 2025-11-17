@@ -17,15 +17,6 @@ cask "rectangle"
 # Clipboard for copy history
 cask "flycut"
 
-# setting up for ruby development with Heroku
-brew "rbenv"
-tap "heroku/brew"
-brew "heroku"
-brew "postgresql"
-brew "yarn"
-brew "ruby-build"
-
-
 # Command Line Utilities
 brew "z" # fast fuzzy-find directory changer
 brew "the_silver_searcher" # ag
@@ -55,7 +46,6 @@ brew 'just'
 # Command Line Prompt
 brew 'pure'
 
-
 # Using Docker
 brew "docker"
 brew "docker-compose"
@@ -63,49 +53,26 @@ brew "docker-compose"
 #Architecture decision records
 brew "adr-tools"
 
-# Personal website tools
-brew "hugo"
-brew "leiningen" # For clojure
-cask "temurin@21"
-brew "clojure/tools/clojure"
-
-#Azure dev
-brew "az"
-brew "helm"
 
 # Digital Ocean for bookwyrm
 brew "doctl"
-
-# Elixer
-brew "autoconf"
-brew "openssl@1.1"
-brew "wxwidgets"
-brew "libxslt"
-brew "fop"
 
 
 # k8s
 brew "minikube"
 brew "kustomize"
+brew "helm"
 
 brew "gpg"
 brew "git-crypt"
 brew "s3cmd"
 brew "libpq" # Postgres tools library
-brew "libidn" # Needed to build extensions for mastodon
 
 # GCP
-cask "google-cloud-sdk"
+cask "gcloud"
 
 # AWS
 brew "awscli"
 
 # Databases
 brew "mysql"
-
-#Short term use
-brew "yt-dlp"
-brew "gh" # to find repository owner id
-
-# Python dev
-brew "pyenv"
