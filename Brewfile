@@ -70,7 +70,9 @@ brew "kubectl"
 brew "kubectx"
 brew "kustomize"
 brew "helm"
-
+brew "k9s" #k8s management command line interface
+tap "argoproj/tap"
+brew "kubectl-argo-rollouts"
 brew "gpg"
 brew "git-crypt"
 brew "s3cmd"
@@ -84,3 +86,6 @@ brew "awscli"
 
 # Databases
 brew "mysql"
+
+# Language servers
+brew 'terraform-ls' # terraform language server
