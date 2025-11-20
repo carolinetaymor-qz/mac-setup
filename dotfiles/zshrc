@@ -33,6 +33,15 @@ export XDG_CONFIG_HOME=~/.config
 alias vim="nvim"
 alias glcoud="gcloud" #typo-proof
 
+# Quick commit with PLATFORM ticket
+gcp() {
+  git commit -m "$1
+
+[PLATFORM-$2]"
+}
+
+# Keep the standard alias too
+alias gcm='git commit -m'
 
 # Path additions
 # Add krew bin to path. This is installed with scripts/k8s-krew, and is used for kubectl plugin management
