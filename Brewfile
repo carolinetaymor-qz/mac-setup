@@ -95,3 +95,5 @@ brew "mysql"
 
 # Language servers
 brew 'terraform-ls' # terraform language server
+
+brew "go"

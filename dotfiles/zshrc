@@ -2,6 +2,9 @@
 
 # Add homebrew to path
 export PATH="/opt/homebrew/bin:$PATH"
+#Setup Gopath
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # Install theme (needs to be brew installed)
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
