@@ -1,5 +1,6 @@
 # Taps
 tap "steveyegge/beads"
+tap "superbrothers/zsh-kubectl-prompt"
 
 # used by luanvim
 brew "npm"
@@ -83,7 +84,7 @@ brew "gpg"
 brew "git-crypt"
 brew "s3cmd"
 brew "libpq" # Postgres tools library
-
+brew "zsh-kubectl-prompt"
 # GCP
 cask "gcloud-cli"
 
