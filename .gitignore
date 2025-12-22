@@ -1,0 +1,3 @@
+# Override global .beads ignore - we want to track it here
+!.beads/
+!.beads/**
