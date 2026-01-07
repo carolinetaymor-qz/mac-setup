@@ -53,7 +53,7 @@ brew "certbot" # Generate certs with lets encrypt
 brew "nmap"
 brew "asdf"
 brew "tfenv" # version manager for terraform
-
+brew "gh" # github cli, useful for claude code reviews
 # Git Project management
 brew 'just'
 # Command Line Prompt
