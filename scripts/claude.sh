@@ -25,6 +25,7 @@ create_required_directories() {
         "$HOME/.claude/context"
         "$HOME/.claude/context/reference-docs"
         "$HOME/.claude/context/preferences"
+        "$HOME/.claude/skills"
     )
 
     for dir in "${directories[@]}"; do
@@ -103,6 +104,29 @@ symlink_preferences() {
     done
 }
 
+<<<<<<< HEAD
+=======
+symlink_skills() {
+    local dotfiles_claude_dir="$1"
+    local source_skills_dir="$dotfiles_claude_dir/skills"
+    local target_skills_dir="$HOME/.claude/skills"
+
+    if [ ! -d "$source_skills_dir" ]; then
+        echo "Warning: $source_skills_dir not found. Skipping skills."
+        return
+    fi
+
+    echo "Symlinking skills..."
+    for skill_item in "$source_skills_dir"/*; do
+        [ -e "$skill_item" ] || continue
+
+        local item_name
+        item_name=$(basename "$skill_item")
+        create_symlink_if_needed "$skill_item" "$target_skills_dir/$item_name"
+    done
+}
+
+>>>>>>> claude-config-jan-8
 main() {
     ensure_claude_directory_initialized
 
@@ -119,6 +143,10 @@ main() {
     symlink_custom_snippets "$dotfiles_claude_dir"
     symlink_claude_md "$dotfiles_claude_dir"
     symlink_preferences "$dotfiles_claude_dir"
+<<<<<<< HEAD
+=======
+    symlink_skills "$dotfiles_claude_dir"
+>>>>>>> claude-config-jan-8
 
     echo "Done!"
 }

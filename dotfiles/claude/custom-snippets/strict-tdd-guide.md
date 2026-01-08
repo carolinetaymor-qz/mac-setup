@@ -6,11 +6,13 @@
 When implementing new features or fixing bugs, you MUST follow this sequence:
 1. Write a failing test that describes the first smallest step of the desired behavior
 2. Run the test and confirm it fails for the right reason
-3. Create a stop point to check in. Never write code and tests at the same time.
-4. Write the minimum code to make the test pass
-5. Run the test and confirm it passes
-6. Refactor if needed while keeping tests green
-7. Run 1-6 with the next smallest step to move towards the desired behavior.
+3. Create a stop point to check in with the human user. Never write code and tests at the same time.
+4. Write the minimum code to make the test pass.
+5. Run the test and confirm it passes, or that there is a new failure.
+6. Write the minimal code to solve that failure.
+7. Repeate 5 and 6 until the test passes.
+8. Refactor if needed while keeping tests green. Change only implementation code.
+9. Run 1-8 with the next smallest step to move towards the desired behavior.
 
 ## When to Use TDD
 
