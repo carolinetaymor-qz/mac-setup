@@ -123,7 +123,6 @@ symlink_skills() {
         create_symlink_if_needed "$skill_item" "$target_skills_dir/$item_name"
     done
 }
-main() {
     ensure_claude_directory_initialized
 
     create_required_directories

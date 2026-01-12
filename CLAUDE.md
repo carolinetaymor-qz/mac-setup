@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a macOS workstation setup repository that automates the installation and configuration of development tools, applications, and dotfiles. It manages system configuration through Homebrew, shell scripts, and dotfiles.
+This is a personal macOS development environment setup repository that automates the installation and configuration of development tools, applications, and dotfiles. It manages system configuration through Homebrew, shell scripts, and dotfiles.
 
 ## Core Architecture
 
@@ -31,34 +31,33 @@ This is a macOS workstation setup repository that automates the installation and
    - publish-gitconfig: Copies dotfiles/gitconfig to ~/.gitconfig
    - iTerm2 preferences (com.googlecode.iterm2.plist)
 
+### Setup Flow
+
+1. User runs `./install.sh` or `just install`
+2. Script ensures Homebrew is installed and in PATH
+3. `brew bundle` installs all packages from Brewfile
+4. All scripts in `scripts/` directory execute in order, setting up tools and creating symlinks
+5. Manual post-setup tasks include setting iTerm preferences and adding SSH keys to GitHub
+
 ## Common Commands
 
-### Installation and Setup
-```bash
-# Full setup (installs Homebrew, runs brew bundle, executes all scripts)
-./install.sh
+### Initial Setup
+- `./install.sh` - Main installation script that installs Homebrew (if needed), runs `brew bundle`, and executes all scripts in the `scripts/` directory
+- `just install` - Alternative way to run the installation (alias for `./install.sh`)
 
-# Install/update packages from Brewfile
-brew bundle
-# or
-just bundle
+### Package Management
+- `brew bundle` - Install/update all packages defined in Brewfile
+- `just bundle` - Same as above
+- `just fix-brew-lock-conflicts` - Resolve Brewfile.lock.json conflicts by resetting and regenerating the lock file
 
-# Fix merge conflicts in Brewfile.lock.json
-just fix-brew-lock-conflicts
+### Development Tasks
+- `just check-scripts` - Run shellcheck on all shell scripts in the `scripts/` directory
+- `just run <target-module>` - Execute a specific script from the `scripts/` directory (e.g., `just run nvim.sh`)
 
-# Run a specific installation script
-just run <script-name>.sh
-# Example: just run nvim.sh
-```
+### Git Configuration Management
+- `manual_scripts/publish-gitconfig` - Copy dotfiles/gitconfig to ~/.gitconfig (overwrites existing global git config)
+- `manual_scripts/save-gitconfig` - Save current ~/.gitconfig back to dotfiles/gitconfig for version control
 
-### Verification and Maintenance
-```bash
-# Check shell scripts for issues
-just check-scripts
-
-# Publish gitconfig to home directory
-./manual_scripts/publish-gitconfig
-```
 
 ### Issue Tracking with Beads
 This repository uses Beads for AI-native issue tracking:
@@ -124,8 +123,7 @@ bd sync
 
 ## Important Notes
 
-- This repository is on branch `quizlet` (not main/master)
 - Manual setup required for iTerm2 preferences: Load from `manual_scripts/` directory in iTerm2 settings
 - Docker must be installed manually from https://docs.docker.com/docker-for-mac/install/
 - SSH key setup required before full usage (see README pre-setup steps)
-- The dotfiles are not automatically symlinked; gitconfig must be manually published via `manual_scripts/publish-gitconfig`
+- The dotfiles are not automatically symlinked; gitconfig must be manually published via `manual_scripts/publish-gitconfig`. The claude files are symlinked by ./scripts/claude.sh

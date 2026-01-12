@@ -98,3 +98,6 @@ brew "mysql"
 brew 'terraform-ls' # terraform language server
 
 brew "go"
+# Python dev
+brew "pyenv"
+brew "typos-cli"

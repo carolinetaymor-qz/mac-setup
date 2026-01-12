@@ -9,6 +9,15 @@ export PATH="$PATH:$GOPATH/bin"
 # Install theme (needs to be brew installed)
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
+
+# Configure Pure prompt colors for high contrast
+zstyle :prompt:pure:path color white
+zstyle :prompt:pure:prompt:success color cyan
+zstyle :prompt:pure:prompt:error color red
+zstyle :prompt:pure:git:branch color yellow
+zstyle :prompt:pure:git:dirty color magenta
+zstyle :prompt:pure:git:stash show yes
+
 prompt pure
 
 # Use z
@@ -27,6 +36,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # Set CLICOLOR if you want Ansi Colors in iTerm2
 export CLICOLOR=1
+
+# Set high-contrast colors for ls output
 
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
@@ -58,6 +69,7 @@ if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/loc
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+<<<<<<< HEAD
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if [ -f ~/.ngrok/auth ]; then
   source ~/.ngrok/auth
@@ -67,3 +79,5 @@ fi
 autoload -U colors; colors
 source /opt/homebrew/etc/zsh-kubectl-prompt/kubectl.zsh
 RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
+
+. "$HOME/.local/bin/env"
