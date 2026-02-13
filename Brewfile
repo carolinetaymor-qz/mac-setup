@@ -80,6 +80,7 @@ brew "helm"
 brew "k9s" #k8s management command line interface
 tap "argoproj/tap"
 brew "kubectl-argo-rollouts"
+brew "argocd"
 brew "gpg"
 brew "git-crypt"
 brew "s3cmd"
