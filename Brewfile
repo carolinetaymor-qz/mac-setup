@@ -1,6 +1,7 @@
 # Taps
 tap "steveyegge/beads"
 tap "superbrothers/zsh-kubectl-prompt"
+tap "atlassian/acli"
 
 # used by luanvim
 brew "npm"
@@ -102,3 +103,10 @@ brew "go"
 # Python dev
 brew "pyenv"
 brew "typos-cli"
+
+
+brew "acli"
+brew "gastown"
+
+# Fun markdown reader
+brew 'glow'

@@ -69,7 +69,6 @@ if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/loc
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-<<<<<<< HEAD
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if [ -f ~/.ngrok/auth ]; then
   source ~/.ngrok/auth
@@ -80,4 +79,3 @@ autoload -U colors; colors
 source /opt/homebrew/etc/zsh-kubectl-prompt/kubectl.zsh
 RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
-. "$HOME/.local/bin/env"
