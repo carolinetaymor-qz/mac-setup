@@ -1,3 +1,11 @@
 # Checking beads in is causing merge conflict nightmares
 .beads/
 .beads/**
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+.beads/*.db
+.beads-credential-key
+
+# Local-only; conventionally holds secrets even though ours doesn't
+.env
